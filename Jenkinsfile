@@ -1,8 +1,6 @@
 pipeline {
   //Donde se va a ejecutar el Pipeline
-  agent {
-    label 'linux'
-  }
+  agent any
 
   //Opciones específicas de Pipeline dentro del Pipeline
   options {
@@ -11,9 +9,9 @@ pipeline {
   }
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
-  tools {
-    jdk 'JDK 8u221' //Versión necesaria para SonarQube según logs (Se menciona que es necesario JDK >= 11)
-  }
+  //tools {
+  //  jdk 'JDK 8u221' //Versión necesaria para SonarQube según logs (Se menciona que es necesario JDK >= 11)
+  //}
 
   //Aquí comienzan los “items” del Pipeline
   stages{
