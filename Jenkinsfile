@@ -1,6 +1,8 @@
 pipeline {
   //Donde se va a ejecutar el Pipeline
-  agent any
+  agent {
+    label 'linux'
+  }
 
   //Opciones específicas de Pipeline dentro del Pipeline
   options {
@@ -35,22 +37,23 @@ pipeline {
 
     stage('Clean') {
       steps{
-        sh 'chmod +x ./mvnw'
-      	sh './mvnw clean'
+        echo "------------>Clean<------------"
+        //sh 'chmod +x ./mvnw'
+      	//sh './mvnw clean'
       }
     }
 
     stage('Compile & Unit Tests') {
       steps{
         echo "------------>compile & Unit Tests<------------"
-        sh './mvnw test'
+        //sh './mvnw test'
       }
     }
 
     stage('Build') {
       steps {
         echo "------------>Build<------------"
-        sh './mvnw build -DskipTests'
+        //sh './mvnw build -DskipTests'
       }
     }
   }
