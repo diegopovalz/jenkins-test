@@ -9,9 +9,9 @@ pipeline {
   }
 
   //Una sección que define las herramientas “preinstaladas” en Jenkins
-  //tools {
-  //  jdk 'JDK 8u221' //Versión necesaria para SonarQube según logs (Se menciona que es necesario JDK >= 11)
-  //}
+  tools {
+    jdk 'jdk-8u221' //Versión necesaria para SonarQube según logs (Se menciona que es necesario JDK >= 11)
+  }
 
   //Aquí comienzan los “items” del Pipeline
   stages{
