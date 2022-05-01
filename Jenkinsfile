@@ -37,16 +37,16 @@ pipeline {
       steps{
         echo "------------>Clean<------------"
         sh 'chmod +x ./mvnw'
-      	sh './mvnw clean'
+      	sh './mvnw clean -DskipTests'
       }
     }
 
-    stage('Compile & Unit Tests') {
-      steps{
-        echo "------------>compile & Unit Tests<------------"
-        sh './mvnw test'
-      }
-    }
+    //stage('Compile & Unit Tests') {
+    //  steps{
+    //    echo "------------>compile & Unit Tests<------------"
+    //    sh './mvnw test'
+    // }
+    //}
 
     stage('Build') {
       steps {
